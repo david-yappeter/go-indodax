@@ -12,12 +12,16 @@ func (c *Client) DepthByPair(pair string) (*model.DepthByPair, error) {
 		return nil, err
 	}
 	var respModel model.DepthByPair
-	var respModelNodes model.DepthByPairChild
+	var respModelNodes *model.DepthByPairChild
 	if err = json.Unmarshal(body, &respModelNodes); err != nil {
-		if err = json.Unmarshal(body, &respModel); err != nil {
-			return nil, err
-		}
+		return nil, err
 	}
-	respModel.Depths = &respModelNodes
+	if err = json.Unmarshal(body, &respModel); err != nil {
+		return nil, err
+	}
+	if respModelNodes.Buy == nil || respModelNodes.Sell == nil {
+		respModelNodes = nil
+	}
+	respModel.Depths = respModelNodes
 	return &respModel, nil
 }
