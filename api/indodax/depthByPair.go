@@ -2,7 +2,7 @@ package indodax
 
 import (
 	"encoding/json"
-	"myapp/model"
+	"go-indodax/model"
 )
 
 func (c *Client) DepthByPair(pair string) (*model.DepthByPair, error) {

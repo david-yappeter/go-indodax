@@ -7,6 +7,11 @@ import (
 	"time"
 )
 
+const (
+	BaseEndpoint        = "https://indodax.com"
+	PrivateBaseEndpoint = "https://indodax/tapi"
+)
+
 type Client struct {
 	BaseEndpoint        string        `json:"base_endpoint"`
 	PrivateBaseEndpoint string        `json:"private_base_endpoint"`
@@ -31,8 +36,8 @@ func NewClient(base string, privateBase string, option ...Option) *Client {
 
 func NewDefaultClient(option ...Option) *Client {
 	client := Client{
-		BaseEndpoint:        "https://indodax.com",
-		PrivateBaseEndpoint: "https://indodax.com/tapi",
+		BaseEndpoint:        BaseEndpoint,
+		PrivateBaseEndpoint: PrivateBaseEndpoint,
 	}
 	if len(option) >= 1 {
 		client.HttpClient = option[0].HttpClient

@@ -1,6 +1,6 @@
 package example
 
-import "myapp/api/indodax"
+import "go-indodax/api/indodax"
 
 func ExampleServerTime() {
 	c := indodax.NewDefaultClient()
@@ -8,9 +8,9 @@ func ExampleServerTime() {
 
 	prettyPrint(sTime)
 	/*
-	    {
-		   "timezone": "UTC",
-		   "server_time": 1622454122414
-	    }
+		    {
+			   "timezone": "UTC",
+			   "server_time": 1622454122414
+		    }
 	*/
 }
