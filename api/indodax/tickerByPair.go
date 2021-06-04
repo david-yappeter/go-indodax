@@ -2,7 +2,8 @@ package indodax
 
 import (
 	"encoding/json"
-	"go-indodax/model"
+
+	"github.com/david-yappeter/go-indodax/model"
 )
 
 func (c *Client) TickerByPair(pair string) (*model.TickerByPair, error) {
