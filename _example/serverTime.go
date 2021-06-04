@@ -1,6 +1,9 @@
 package example
 
-import "go-indodax/api/indodax"
+import (
+	"github.com/david-yappeter/go-indodax/api"	"github.com/david-yappeter/go-indodax/api/indodax"
+)
+
 
 func ExampleServerTime() {
 	c := indodax.NewDefaultClient()
@@ -16,35 +19,35 @@ func ExampleServerTime() {
 }
 
 func ExamplePairs() {
-	c := indodax.NewDefaultClient()
+	c := api.NewDefaultClient()
 	resp, _ := c.Pairs()
 
 	prettyPrint(resp)
 }
 
 func ExamplePriceIncrements() {
-	c := indodax.NewDefaultClient()
+	c := api.NewDefaultClient()
 	resp, _ := c.PriceIncrements()
 
 	prettyPrint(resp)
 }
 
 func ExampleSummaries() {
-	c := indodax.NewDefaultClient()
+	c := api.NewDefaultClient()
 	resp, _ := c.Summaries()
 
 	prettyPrint(resp)
 }
 
 func ExampleTickerAll() {
-	c := indodax.NewDefaultClient()
+	c := api.NewDefaultClient()
 	resp, _ := c.TickerAll()
 
 	prettyPrint(resp)
 }
 
 func ExampleTickerByPairs() {
-	c := indodax.NewDefaultClient()
+	c := api.NewDefaultClient()
 	resp, _ := c.TickerByPair("btcidr")
 
 	prettyPrint(resp)
@@ -67,7 +70,7 @@ func ExampleTickerByPairs() {
 }
 
 func ExampleTickerByPairsError() {
-	c := indodax.NewDefaultClient()
+	c := api.NewDefaultClient()
 	resp, _ := c.TickerByPair("asd")
 
 	prettyPrint(resp)
@@ -81,14 +84,14 @@ func ExampleTickerByPairsError() {
 }
 
 func ExampleDepthByPairs() {
-	c := indodax.NewDefaultClient()
+	c := api.NewDefaultClient()
 	resp, _ := c.DepthByPair("btcidr")
 
 	prettyPrint(resp)
 }
 
 func ExampleDepthByPairsError() {
-	c := indodax.NewDefaultClient()
+	c := api.NewDefaultClient()
 	resp, _ := c.DepthByPair("asd")
 
 	prettyPrint(resp)
@@ -102,7 +105,7 @@ func ExampleDepthByPairsError() {
 	*/
 }
 func TradesByPair() {
-	c := indodax.NewDefaultClient()
+	c := api.NewDefaultClient()
 	resp, _ := c.TradesByPair("btcidr")
 
 	prettyPrint(resp)
@@ -119,7 +122,7 @@ func TradesByPair() {
 }
 
 func TradesByPairError() {
-	c := indodax.NewDefaultClient()
+	c := api.NewDefaultClient()
 	resp, _ := c.TradesByPair("asd")
 
 	prettyPrint(resp)

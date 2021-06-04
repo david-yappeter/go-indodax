@@ -1,13 +1,13 @@
 package goindodax
 
 import (
-	"go-indodax/api/indodax"
+	"github.com/david-yappeter/go-indodax/api"
 )
 
-func NewClient(base string, privateBase string, option ...indodax.Option) *indodax.Client {
-	return indodax.NewClient(base, privateBase, option...)
+func NewClient(base string, privateBase string, option ...api.Option) *api.Client {
+	return api.NewClient(base, privateBase, option...)
 }
 
-func NewDefaultClient(option ...indodax.Option) *indodax.Client {
-	return indodax.NewDefaultClient(option...)
+func NewDefaultClient(option ...api.Option) *api.Client {
+	return api.NewDefaultClient(option...)
 }

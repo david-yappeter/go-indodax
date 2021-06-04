@@ -1,4 +1,4 @@
-package indodax
+package api
 
 import (
 	"encoding/json"

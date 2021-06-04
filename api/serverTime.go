@@ -1,4 +1,4 @@
-package indodax
+package api
 
 import (
 	"encoding/json"
@@ -6,13 +6,13 @@ import (
 	"github.com/david-yappeter/go-indodax/model"
 )
 
-func (c *Client) TickerByPair(pair string) (*model.TickerByPair, error) {
-	c.newRequest(c.endpointTickerByPair(nil, pair))
+func (c *Client) ServerTime() (*model.ServerTime, error) {
+	c.newRequest(c.endpointServerTime(nil))
 	body, err := c.do()
 	if err != nil {
 		return nil, err
 	}
-	var respModel model.TickerByPair
+	var respModel model.ServerTime
 	if err = json.Unmarshal(body, &respModel); err != nil {
 		return nil, err
 	}

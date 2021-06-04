@@ -1,4 +1,4 @@
-package indodax
+package api
 
 import (
 	"encoding/json"
@@ -6,13 +6,13 @@ import (
 	"github.com/david-yappeter/go-indodax/model"
 )
 
-func (c *Client) PriceIncrements() (*model.PriceIncrements, error) {
-	c.newRequest(c.endpointPriceIncrements(nil))
+func (c *Client) Pairs() (*model.Pairs, error) {
+	c.newRequest(c.endpointPairs(nil))
 	body, err := c.do()
 	if err != nil {
 		return nil, err
 	}
-	var respModel model.PriceIncrements
+	var respModel model.Pairs
 	if err = json.Unmarshal(body, &respModel); err != nil {
 		return nil, err
 	}
