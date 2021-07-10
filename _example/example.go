@@ -1,12 +1,11 @@
 package example
 
 import (
-	"github.com/david-yappeter/go-indodax/api"	"github.com/david-yappeter/go-indodax/api/indodax"
+	"github.com/david-yappeter/go-indodax/api"
 )
 
-
 func ExampleServerTime() {
-	c := indodax.NewDefaultClient()
+	c := api.NewDefaultClient()
 	resp, _ := c.ServerTime()
 
 	prettyPrint(resp)
